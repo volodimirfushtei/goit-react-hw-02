@@ -1,0 +1,14 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+}
+.feedback_item {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  color: #5f0505;
+  transition: color 0.2s ease;
+  padding: 0;
+}
