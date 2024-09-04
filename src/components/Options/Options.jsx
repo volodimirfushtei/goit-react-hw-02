@@ -1,31 +1,27 @@
 import s from "./Options.module.css";
 
-const Options = ({ onFeedback }) => {
-  const handleClick = (type) => {
-    onFeedback(type);
-  };
-
+const Options = ({ updateFeedback }) => {
   return (
     <>
       <form className={s.form}>
         <button
           type="button"
           className={s.button}
-          onClick={() => handleClick("good")}
+          onClick={() => updateFeedback("good")}
         >
           Good
         </button>
         <button
           type="button"
           className={s.button}
-          onClick={() => handleClick("neutral")}
+          onClick={() => updateFeedback("neutral")}
         >
           Neutral
         </button>
         <button
           type="button"
           className={s.button}
-          onClick={() => handleClick("bad")}
+          onClick={() => updateFeedback("bad")}
         >
           Bad
         </button>

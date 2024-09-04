@@ -1,6 +1,10 @@
-import s from "./Feedback.module.css";
+import s from "./Feedback.module.css"; // Переконайтесь, що шлях до файлу правильний
 
-const Feedback = ({ good, neutral, bad }) => {
+const Feedback = ({ good, neutral, bad, totalFeedback }) => {
+  if (totalFeedback === 0) {
+    return null;
+  }
+
   return (
     <div className={s.feedback}>
       <p className={s.feedback_item}>Good: {good}</p>
@@ -9,4 +13,5 @@ const Feedback = ({ good, neutral, bad }) => {
     </div>
   );
 };
+
 export default Feedback;

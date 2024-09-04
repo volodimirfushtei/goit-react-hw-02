@@ -1,0 +1,15 @@
+.notificationWrapp {
+  font: 1.5em sans-serif;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c52b2b;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
