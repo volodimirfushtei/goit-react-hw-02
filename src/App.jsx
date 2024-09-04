@@ -10,6 +10,8 @@ export default function App() {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
+    Positive: 0,
   });
 
   const totalFeedback = feedbacks.good + feedbacks.neutral + feedbacks.bad;
@@ -23,17 +25,33 @@ export default function App() {
     }));
   };
 
+  const resetFeedback = () => {
+    setFeedbacks({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+      total: 0,
+      Positive: 0,
+    });
+  };
+
   return (
     <>
       <Description />
-      <Options updateFeedback={updateFeedback} />
-      <Feedback
-        good={feedbacks.good}
-        neutral={feedbacks.neutral}
-        bad={feedbacks.bad}
-        totalFeedback={totalFeedback}
+      <Options
+        updateFeedback={updateFeedback}
+        resetFeedback={resetFeedback}
+        haveFeedback={totalFeedback > 0}
       />
       <Notification totalFeedback={totalFeedback} />
+      {totalFeedback > 0 && (
+        <Feedback
+          good={feedbacks.good}
+          neutral={feedbacks.neutral}
+          bad={feedbacks.bad}
+          totalFeedback={totalFeedback}
+        />
+      )}
     </>
   );
 }

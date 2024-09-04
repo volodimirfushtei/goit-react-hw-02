@@ -1,6 +1,6 @@
 import s from "./Options.module.css";
 
-const Options = ({ updateFeedback }) => {
+const Options = ({ updateFeedback, resetFeedback, haveFeedback }) => {
   return (
     <>
       <form className={s.form}>
@@ -25,6 +25,15 @@ const Options = ({ updateFeedback }) => {
         >
           Bad
         </button>
+        {haveFeedback && (
+          <button
+            className={s.reset_button}
+            type="button"
+            onClick={resetFeedback}
+          >
+            Reset
+          </button>
+        )}
       </form>
     </>
   );
